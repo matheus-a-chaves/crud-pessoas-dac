@@ -1,3 +1,4 @@
+import { EnderecoModule } from './endereco/endereco.module';
 import { CidadeModule } from './cidade/cidade.module';
 import { EstadoModule } from './estado/estado.module';
 import { NgModule } from '@angular/core';
@@ -19,6 +20,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbModule,
     EstadoModule,
     CidadeModule,
+    EnderecoModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,3 +1,6 @@
+import { EditarEnderecoComponent } from './endereco/editar-endereco/editar-endereco.component';
+import { InserirEnderecoComponent } from './endereco/inserir-endereco/inserir-endereco.component';
+import { ListarEnderecoComponent } from './endereco/listar-endereco/listar-endereco.component';
 import { EditarCidadeComponent } from './cidade/editar-cidade/editar-cidade.component';
 import { InserirCidadeComponent } from './cidade/inserir-cidade/inserir-cidade.component';
 import { ListarCidadeComponent } from './cidade/listar-cidade/listar-cidade.component';
@@ -63,6 +66,22 @@ const routes: Routes = [
   {
     path: 'cidades/editar/:id',
     component: EditarCidadeComponent,
+  },
+  {
+    path: 'enderecos',
+    redirectTo: 'enderecos/listar',
+  },
+  {
+    path: 'enderecos/listar',
+    component: ListarEnderecoComponent,
+  },
+  {
+    path: 'enderecos/novo',
+    component: InserirEnderecoComponent,
+  },
+  {
+    path: 'enderecos/editar/:id',
+    component: EditarEnderecoComponent,
   },
 ];
 

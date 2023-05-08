@@ -1,1 +1,52 @@
-<p>editar-endereco works!</p>
+<div class="well">
+  <form #formEndereco="ngForm">
+    <div class="form-group">
+      <label for="nome">Rua:</label>
+      <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="endereco.rua" #nome="ngModel"
+        minlength="2" required>
+      <div *ngIf="nome.errors && (nome.dirty || nome.touched)" class="alert alert-danger">
+        <div [hidden]="!nome?.errors?.['required']">Digite a rua do endereco.</div>
+        <div [hidden]="!nome?.errors?.['minlength']">A rua do endereco deve conter no minimo 2 caracteres.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="numero">Numero:</label>
+      <input type="text" class="form-control" id="numero" name="numero" [(ngModel)]="endereco.numero" #numero="ngModel"
+        numerico required>
+      <div *ngIf="numero.errors && (numero.dirty || numero.touched)" class="alert alert-danger">
+        <div [hidden]="!numero?.errors?.['required']">Digite o numero do endereco.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="cidade">Cidade:</label>
+      <input type="text" class="form-control" id="cidade" name="cidade" [(ngModel)]="endereco.cidade" #cidade="ngModel"
+        required>
+      <div *ngIf="cidade.errors && (cidade.dirty || cidade.touched)" class="alert alert-danger">
+        <div [hidden]="!estado?.errors?.['required']">Digite a cidade.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="estado">Estado:</label>
+      <input type="text" class="form-control" id="estado" name="estado" [(ngModel)]="endereco.estado" #estado="ngModel"
+        required>
+      <div *ngIf="estado.errors && (estado.dirty || estado.touched)" class="alert alert-danger">
+        <div [hidden]="!estado?.errors?.['required']">Digite o estado.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-primary" (click)="atualizar()" [disabled]="!formEndereco.form.valid">
+        <i class="fa fa-save" aria-hidden="true"></i>
+        Salvar
+      </button>
+      <a [routerLink]="['/enderecos/listar']" href="" class="btn btn-secondary">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        Voltar
+      </a>
+    </div>
+
+  </form>
+</div>
