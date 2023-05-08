@@ -15,14 +15,14 @@
       <td>{{estado.sigla}}</td>
       <td class="text-center" style="width:300px">
 
-        <button class="btn btn-xs btn-info">
+        <button class="btn btn-xs btn-info" (click)="abriModal(estado)">
           <i class="fa fa-eye" aria-hidden="true"></i> Ver
         </button>
 
-        <a title="Editar" alt="Editar" class="btn btn-xs btn-info">
+        <a title="Editar" [routerLink]="['/estados/editar', estado.id]" alt="Editar" class="btn btn-xs btn-info">
           <i class="fa fa-edit" aria-hidden="true"></i> Editar
         </a>
-        <a href="" title="Remover" alt="Remover" class="btn btn-xs btn-danger">
+        <a href="" title="Remover" alt="Remover" class="btn btn-xs btn-danger" (click)="remover($event, estado)">
           <i class="fa fa-times" aria-hidden="true"></i> Remover
         </a>
       </td>
