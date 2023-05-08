@@ -1,3 +1,7 @@
 export class Cidade {
-  constructor(public nome?: string, public estado?: string) {}
+  constructor(
+    public id?: number,
+    public nome?: string,
+    public estado?: string
+  ) {}
 }

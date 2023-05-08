@@ -1,3 +1,4 @@
+import { CidadeModule } from './cidade/cidade.module';
 import { EstadoModule } from './estado/estado.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,6 +18,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SharedModule,
     NgbModule,
     EstadoModule,
+    CidadeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

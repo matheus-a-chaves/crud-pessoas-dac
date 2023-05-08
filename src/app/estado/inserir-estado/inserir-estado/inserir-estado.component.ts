@@ -20,7 +20,6 @@ export class InserirEstadoComponent implements OnInit {
   }
 
   inserir(): void {
-    console.log('--------------ASDAS');
     if (this.formEstado.form.valid) {
       this.estadoService.inserir(this.estado);
 
