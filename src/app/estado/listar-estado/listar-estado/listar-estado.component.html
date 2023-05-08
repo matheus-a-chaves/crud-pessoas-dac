@@ -11,8 +11,8 @@
       </th>
     </tr>
     <tr *ngFor="let estado of estados">
-      <td>{{estado.nome}}</td>
-      <td>{{estado.sigla}}</td>
+      <td>{{ estado.nome! | caixaAlta }}</td>
+      <td>{{ estado.sigla! | caixaAlta }}</td>
       <td class="text-center" style="width:300px">
 
         <button class="btn btn-xs btn-info" (click)="abriModal(estado)">
