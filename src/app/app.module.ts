@@ -1,3 +1,4 @@
+import { EstadoModule } from './estado/estado.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -9,7 +10,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, PessoaModule, SharedModule, NgbModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    PessoaModule,
+    SharedModule,
+    NgbModule,
+    EstadoModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

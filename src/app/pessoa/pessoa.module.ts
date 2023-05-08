@@ -1,5 +1,3 @@
-import { MinimoValidatorDirective } from './../shared/directives/minimo-validator.directive';
-import { NumericoDirective } from './../shared/directives/numerico.directive';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
