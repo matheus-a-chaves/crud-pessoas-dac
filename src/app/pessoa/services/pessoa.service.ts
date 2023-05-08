@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Pessoa } from '../../shared/models/pessoa.model';
+import { Pessoa } from 'src/app/shared';
 
 const LS_CHAVE: string = 'pessoas';
 

@@ -1,5 +1,5 @@
 import { PessoaService } from './../services/pessoa.service';
-import { Pessoa } from './../../shared/models/pessoa.model';
+import { Pessoa } from 'src/app/shared';
 import { NgForm } from '@angular/forms';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
