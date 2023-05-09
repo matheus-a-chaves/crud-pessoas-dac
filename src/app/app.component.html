@@ -8,13 +8,13 @@
         <li class="nav-item">
           <a href="#" class="nav-link" routerLink="/pessoas">Pessoas</a>
         </li>
-        <li class="nav-item">
+        <li *ngIf="usuarioLogado?.perfil==='ADMIN' || usuarioLogado?.perfil==='GERENTE'" class="nav-item">
           <a href="#" class="nav-link" routerLink="/enderecos">Endereços</a>
         </li>
-        <li class="nav-item">
+        <li *ngIf="usuarioLogado?.perfil==='GERENTE'" class="nav-item">
           <a href="#" class="nav-link" routerLink="/cidades">Cidades</a>
         </li>
-        <li class="nav-item">
+        <li *ngIf="usuarioLogado?.perfil==='ADMIN' || usuarioLogado?.perfil==='FUNC'" class="nav-item">
           <a href="#" class="nav-link" routerLink="/estados">Estados</a>
         </li>
 
@@ -23,26 +23,29 @@
 
           <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown1">
             <a ngbDropdownItem href="#" routerLink="/pessoas" (click)="$event.preventDefault()">Pessoas</a>
-            <a ngbDropdownItem href="#" routerLink="/enderecos" (click)="$event.preventDefault()">Endereços</a>
-            <a ngbDropdownItem href="#" routerLink="/cidades" (click)="$event.preventDefault()">Cidades</a>
-            <a ngbDropdownItem href="#" routerLink="/estados" (click)="$event.preventDefault()">Estados</a>
+            <a *ngIf="usuarioLogado?.perfil==='ADMIN' || usuarioLogado?.perfil==='GERENTE'" ngbDropdownItem href="#"
+              routerLink="/enderecos" (click)="$event.preventDefault()">Endereços</a>
+            <a *ngIf="usuarioLogado?.perfil==='GERENTE'" ngbDropdownItem href="#" routerLink="/cidades"
+              (click)="$event.preventDefault()">Cidades</a>
+            <a *ngIf="usuarioLogado?.perfil==='ADMIN' || usuarioLogado?.perfil==='FUNC'" ngbDropdownItem href="#"
+              routerLink="/estados" (click)="$event.preventDefault()">Estados</a>
 
           </div>
         </li>
 
       </ul>
 
-
-
-
+      <ul *ngIf="usuarioLogado" class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a href="#" class="nav-link" (click)="logout()">Logout</a>
+        </li>
+        <li class="nav-item">
+          <p class="navbar-text mb-0 text-white">
+            <i class="fa fa-user"></i>{{usuarioLogado.nome}}
+          </p>
+        </li>
+      </ul>
     </div>
-
-
-
-
-
-
-
   </nav>
 
   <router-outlet></router-outlet>
