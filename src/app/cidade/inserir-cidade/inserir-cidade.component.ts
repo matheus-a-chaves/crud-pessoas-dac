@@ -1,3 +1,5 @@
+import { ServiceService } from './../../estado/services/service.service';
+import { Estado } from './../../shared/models/estado.model';
 import { Router } from '@angular/router';
 import { CidadeService } from './../services/cidade.service';
 import { Cidade } from './../../shared/models/cidade.model';
@@ -12,10 +14,16 @@ import { NgForm } from '@angular/forms';
 export class InserirCidadeComponent implements OnInit {
   @ViewChild('formCidade') formCidade!: NgForm;
   cidade!: Cidade;
-  constructor(private cidadeService: CidadeService, private router: Router) {}
+  estados: Estado[] = [];
+  constructor(
+    private cidadeService: CidadeService,
+    private estadoService: ServiceService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.cidade = new Cidade();
+    this.estados = this.estadoService.listarTodos();
   }
 
   inserir(): void {

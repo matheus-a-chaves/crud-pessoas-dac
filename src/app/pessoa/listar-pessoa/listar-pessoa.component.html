@@ -5,6 +5,7 @@
       <th>Nome</th>
       <th>Idade</th>
       <th>Data de Nascimento</th>
+      <th>CNH</th>
       <th class="text-center">
         <a [routerLink]="['/pessoas/novo']" href="#" title="Novo" alt="Novo" class="btn btn-xs btn-sucess">
           <i class="fa fa-plus" aria-hidden="true"></i> Novo
@@ -15,6 +16,7 @@
       <td>{{pessoa.nome! | caixaAlta }}</td>
       <td>{{pessoa.idade}}</td>
       <td>{{pessoa.dataNascimento! | mask:'d0/M0/0000'}}</td>
+      <td>{{pessoa.motorista! ? pessoa.motorista : "Não possui"}}</td>
       <td class="text-center" style="width:300px">
 
         <button class="btn btn-xs btn-info" (click)="abriModal(pessoa)">

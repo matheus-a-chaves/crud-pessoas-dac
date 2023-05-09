@@ -1,3 +1,4 @@
+import { NgSelectModule } from '@ng-select/ng-select';
 import { SharedModule } from './../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -22,6 +23,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
   imports: [
     CommonModule,
     RouterModule,
+    NgSelectModule,
     FormsModule,
     NgxMaskModule.forRoot(),
     SharedModule,
