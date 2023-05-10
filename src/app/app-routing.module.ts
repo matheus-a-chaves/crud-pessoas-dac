@@ -15,6 +15,7 @@ import { ListarPessoaComponent } from './pessoa/listar-pessoa/listar-pessoa.comp
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginRoutes } from './auth/auth-routing.module';
+import { UsuarioRoutes } from './usuario/usuario-routing.module';
 
 const routes: Routes = [
   {
@@ -142,6 +143,7 @@ const routes: Routes = [
     },
   },
   ...LoginRoutes,
+  ...UsuarioRoutes,
 ];
 
 @NgModule({
